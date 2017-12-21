@@ -1,19 +1,21 @@
-# Twitter Text Adventure
+# A Colossal Twitter Adventure
 ---
 ## Description
 
-Twitter Text Adventure is a game engine for building text adventure games that are played on the Twitter platform. The player tweets their instructions to a twitter bot, and the twitter bot responds with the proper description of the room the player is currently located.
+__A Colossal Twitter Adventure__ is a game engine for building text adventure games that are played on the Twitter platform. The player tweets their instructions to a twitter bot, and the twitter bot responds with the proper description of the room the player is currently located.
 
-All logic is run on a hosted server that uses the Twitter API as the user/game interface tool. This allows the game to be played anywhere twitter is available, including:
-- On phones
-- Within the twitter.com's browser interface
-- Embedded in a third-party webpage
-- SMS
-- Anything else
+All logic for the MVP will be run on a hosted website without any server side implementation or API integration. For the MVP, I'm focusing on the visual representation and internal room object structuring, then will expand to implement additional features in the future.
 
 ![Mockup](acta-mockup.png)
 
-Once the MVP is created, I'd like to expand it to include the ability to allow user-created text adventure campaigns to be uploaded to a single persistent database that would operate as a Twitter powered MMO text adventure. Akin to the concept of early Multi-User Dungeon games, this would allow for many players to navigate through a single shared space and potentially interact with one another.
+In future iterations, I would like to expand the functionality to use the Twitter API as the user/game interface tool. This will allow the game to be played anywhere twitter is available, including:
+- On phones
+- Within the twitter's browser interface
+- Embedded in a third-party webpage or tool
+- SMS
+- etc...
+
+In even further iterations, I'd like to expand it to include the ability to allow user-created text adventure campaigns to be uploaded to a single persistent database that would operate as a Twitter powered MMO text adventure. Akin to the concept of early Multi-User Dungeon games, this would allow for many players to navigate through a single shared space and potentially interact with one another.
 
 Taking advantage of the Twitter infrastructure could allow users to share or embed their personal adventures anywhere they please. Additionally, the open nature of Twitter will increase exposure of the app to the player's Twitter followers. The social implications of this kind of real-time open text adventure style gameplay on Twitter is amusing to consider.
 
@@ -55,11 +57,6 @@ ___
 - Being called out
 - Forced to adopt a culture that he doesn't want to be part of
 
-## User Stories
-
-- As a player, I want to play through Zork on Twitter to have a reason to use my Twitter account.
-- As a player, I want to dive into some nostalgic gaming to 'member the good ol' days when video games were better.
-
 ---
 
 ## Hector
@@ -95,12 +92,16 @@ ___
 
 ---
 
-## User Stories
+## User Stories for MVP
+
+1. As a player, I want to dive into some nostalgic gaming to 'member the good ol' days when videogames were better.
+1. As a husband that rides the train to and from work, I want to fit gaming into the cracks so I can participate in my favorite passtime without sacrificing family time.
+1. As a player, I want to have a map and inventory displayed on my screen so I can take text adventuring on the go without needing to carry a drawn map.
+
+## User Stories for Future Iterations
 
 1. As a player, I want to play through Zork on Twitter to have a reason to use my Twitter account.
-1. As a player, I want to dive into some nostalgic gaming to 'member the good ol' days when videogames were better.
 1. As a player, I want to share my gaming with the world so I can connect with others that share a similar hobby.
-1. As a husband that rides the train to and from work, I want to fit gaming into the cracks so I can participate in my favorite passtime without sacrificing family time.
 
 ---
 
