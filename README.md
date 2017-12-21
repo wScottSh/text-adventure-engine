@@ -8,11 +8,16 @@ All logic is run on a hosted server that uses the Twitter API as the user/game i
 - On phones
 - Within the twitter.com's browser interface
 - Embedded in a third-party webpage
+- SMS
 - Anything else
+
+![Mockup](acta-mockup.png)
 
 Once the MVP is created, I'd like to expand it to include the ability to allow user-created text adventure campaigns to be uploaded to a single persistent database that would operate as a Twitter powered MMO text adventure. Akin to the concept of early Multi-User Dungeon games, this would allow for many players to navigate through a single shared space and potentially interact with one another.
 
 Taking advantage of the Twitter infrastructure could allow users to share or embed their personal adventures anywhere they please. Additionally, the open nature of Twitter will increase exposure of the app to the player's Twitter followers. The social implications of this kind of real-time open text adventure style gameplay on Twitter is amusing to consider.
+
+### [Original Twitter Text Adventure Scribbles on Evernote](https://www.evernote.com/shard/s23/sh/66d95a0b-6a96-445a-b115-b7ddd46d113f/0448409f567394fdff292976fde3726b)
 
 ---
 # User Persona
@@ -40,8 +45,7 @@ ___
 ### Likes
 
 - Video games, especially weird, nostalgic, or ones with good stories
-- drawing
-- Right politics
+- Drawing
 - Reading deep/weird books
 - Yummy food
 - Table top gaming
