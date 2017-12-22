@@ -1,32 +1,39 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // console.log("jQuery ready");
 
-  function Game() {
+  function Game () {
     // console.log("Game sanity check");
 
-    function Parser(userString) {
+    function Parser (userString) {
       // console.log("parser sanity check");
-      this.userString = userString;
+
+      this.userString = userString
       this.approvedVerbs = [
-        "go",
-        "get"
+        'go',
+        'get'
       ]
 
       this.arrayMaker = () => {
         // this breaks the string into words for parsing
-        let lowerCaseString = this.userString.toLowerCase();
-        let workableArray = lowerCaseString.split(" ");
-        return workableArray;
+        let lowerCaseString = this.userString.toLowerCase()
+        let workableArray = lowerCaseString.split(' ')
+        return workableArray
       }
 
       this.findVerb = () => {
         // looks for the first approved verb in the string & returns that verb
-        this.array = this.arrayMaker();
+        let workableArray = this.arrayMaker()
+        let verbs = this.approvedVerbs
 
-        if (this.array.indexOf("walk") >= 0) {
-          console.log("Walk is in the array!");
+        for (var i = 0; i < verbs.length; i++) {
+          // check the string array to see if it has any one of the approved verbs in it
+          // for the verb[0], check indexOf(the string array)
+        }
+
+        if (workableArray.indexOf('walk') >= 0) {
+          console.log('Walk is in the array!')
         } else {
-          console.log("Walk is not in the array!");
+          console.log('Walk is not in the array!')
         }
       }
 
@@ -39,7 +46,7 @@ $(document).ready(function() {
       }
     }
 
-    function Player() {
+    function Player () {
       // contains all of the code for moving the player and interacting with the world.
     }
 
@@ -54,12 +61,11 @@ $(document).ready(function() {
 
     // debugger;
 
-    fromForm = "walk This is My tEst strIng. How do you like that?";
-    this.myParser = new Parser(fromForm);
+    fromForm = 'walk This is My tEst strIng. How do you like that?'
+    this.myParser = new Parser(fromForm)
   };
 
   gameLogic = new Game();
-
-});
+})
 
 // debugger;
