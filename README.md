@@ -1,5 +1,5 @@
 # A Colossal Twitter Adventure
----
+
 ## Description
 
 __A Colossal Twitter Adventure__ is a game engine for building text adventure games that are played on the Twitter platform. The player tweets their instructions to a twitter bot, and the twitter bot responds with the proper description of the room the player is currently located.
@@ -21,9 +21,7 @@ Taking advantage of the Twitter infrastructure could allow users to share or emb
 
 ### [Original Twitter Text Adventure Scribbles on Evernote](https://www.evernote.com/shard/s23/sh/66d95a0b-6a96-445a-b115-b7ddd46d113f/0448409f567394fdff292976fde3726b)
 
----
 # User Persona
-___
 
 ## Jeff
 
@@ -57,7 +55,6 @@ ___
 - Being called out
 - Forced to adopt a culture that he doesn't want to be part of
 
----
 
 ## Hector
 
@@ -90,7 +87,6 @@ ___
 - Taking social media too seriously
 - Gross sushi
 
----
 
 ## User Stories for MVP
 
@@ -104,7 +100,6 @@ ___
 1. As a player, I want to share my gaming with the world so I can connect with others that share a similar hobby.
 1. As a level creator, I want to create my own rooms and host them online within the persistent world so I can make the world massive and personalized.
 
----
 
 ## MVP
 
