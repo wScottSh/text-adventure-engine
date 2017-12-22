@@ -6,29 +6,41 @@ $(document).ready(function() {
 
     function Parser(userString) {
       // console.log("parser sanity check");
+      this.userString = userString;
+      this.approvedVerbs = [
+        "go",
+        "get"
+      ]
 
-      this.arrayMaker = (userString) => {
+      this.arrayMaker = () => {
         // this breaks the string into words for parsing
-        let lowerCaseString = userString.toLowerCase();
+        let lowerCaseString = this.userString.toLowerCase();
         let workableArray = lowerCaseString.split(" ");
         return workableArray;
       }
 
-      this.findVerb = (array) => {
+      this.findVerb = () => {
         // looks for the first approved verb in the string & returns that verb
+        this.array = this.arrayMaker();
+
+        if (this.array.indexOf("walk") >= 0) {
+          console.log("Walk is in the array!");
+        } else {
+          console.log("Walk is not in the array!");
+        }
       }
 
-      this.findNoun = (array) => {
-        // looks for the first approved noun in the string & returns that noun
+      this.findNouns = (array) => {
+        // looks for the approved nouns in the string & return them
       }
 
-      this.processInput = (noun, verb) => {
+      this.processInput = (noun, verbArray) => {
         // this takes the above couple functions and actually parses the string, returning the thing that the computer needs to do
       }
     }
 
     function Player() {
-
+      // contains all of the code for moving the player and interacting with the world.
     }
 
     // function ApprovedWords() {
@@ -42,7 +54,7 @@ $(document).ready(function() {
 
     // debugger;
 
-    let fromForm = "This is my test string";
+    fromForm = "walk This is My tEst strIng. How do you like that?";
     this.myParser = new Parser(fromForm);
   };
 
