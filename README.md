@@ -107,15 +107,18 @@ ___
 
 ## MVP
 
-1. Recreate Zork in JS, then deliver that experience in a browser experience.
+1. Recreate Zork in JS, then deliver that experience in a browser.
   - Build input parser
-  - Build array of rooms with viable accepted commands, descriptions, and items. Add into database (using JSON structure)
+  - Build a series of room objects with viable accepted commands, descriptions, and items.
   - Accept input via browser, to which database responds with correct description and viable directions
-2. Hook it up to the twitter API and embed those tweets into the HTML page.
-  - Tweet commands to a twitter bot, which responds back with room descriptions via tweet.
+2. Display inventory of collected items in bottom left.
+3. Auto update and populate the map based on rooms you've visited.
+  -
 
 ### Ways to build further after MVP
 
+2. Hook it up to the twitter API and embed those tweets into the HTML page.
+  - Tweet commands to a twitter bot, which responds back with room descriptions via tweet.
 4. Build a display of player's current location and inventory into HTML landing page.
   - In-game location
   - Visualization of the directions it's possible to move based on pulling object information from database
@@ -125,7 +128,7 @@ ___
   - Add interacting with other players
   - add real-time elements on timers
 
-This is idea is one I scribbled some ideas about in 2012, but originally didn't have the skills to implement. Feel free to dig through the few pages of jotted notes to get a feel for the original idea here:
+I originally scribbled some ideas for this game in 2012, but didn't have the skills to implement it at the time. Feel free to dig through the few pages of jotted notes to get a feel for the original idea here:
 
 ### [Twitter Text Adventure on Evernote](https://www.evernote.com/shard/s23/sh/66d95a0b-6a96-445a-b115-b7ddd46d113f/0448409f567394fdff292976fde3726b)
 ![First Page of Twitter Text Adventure](https://www.evernote.com/shard/s23/sh/66d95a0b-6a96-445a-b115-b7ddd46d113f/0448409f567394fdff292976fde3726b/res/9335dfc9-6084-4baa-87d7-7a1bf733e9b8/ScanSnap0056.jpg?resizeSmall&width=832)
