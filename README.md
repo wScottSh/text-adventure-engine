@@ -102,6 +102,7 @@ ___
 
 1. As a player, I want to play through Zork on Twitter to have a reason to use my Twitter account.
 1. As a player, I want to share my gaming with the world so I can connect with others that share a similar hobby.
+1. As a level creator, I want to create my own rooms and host them online within the persistent world so I can make the world massive and personalized.
 
 ---
 
@@ -113,20 +114,18 @@ ___
   - Accept input via browser, to which database responds with correct description and viable directions
 2. Display inventory of collected items in bottom left.
 3. Auto update and populate the map based on rooms you've visited.
-  -
+  - Hover over each room to re-display the room description via a pop-up in the UI (not using the Alt Text)
+  - Visualization of the directions it's possible to move based on pulling object information from database
 
 ### Ways to build further after MVP
 
 2. Hook it up to the twitter API and embed those tweets into the HTML page.
   - Tweet commands to a twitter bot, which responds back with room descriptions via tweet.
-4. Build a display of player's current location and inventory into HTML landing page.
-  - In-game location
-  - Visualization of the directions it's possible to move based on pulling object information from database
 3. Add functionality for users to create their own campaigns using a submission form.
 5. Build MMO side
   - Add combat system
   - Add interacting with other players
-  - add real-time elements on timers
+  - Add real-time elements on timers
 
 I originally scribbled some ideas for this game in 2012, but didn't have the skills to implement it at the time. Feel free to dig through the few pages of jotted notes to get a feel for the original idea here:
 
