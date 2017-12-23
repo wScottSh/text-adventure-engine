@@ -12,22 +12,27 @@ $(document).ready(function () {
         'go',
         'get'
       ]
+      this.approvedNouns = [
 
-      this.arrayMaker = () => {
+      ]
+
+      this.stringToArray = () => {
         // this breaks the string into words for parsing
-        let lowerCaseString = this.userString.toLowerCase()
+        let lowerCaseString = this.userString.toLowerCase().replace(/[^\w\s]|_/g, '').replace(/\s+/g, ' ');
         let workableArray = lowerCaseString.split(' ')
         return workableArray
       }
 
       this.findVerb = () => {
         // looks for the first approved verb in the string & returns that verb
-        let workableArray = this.arrayMaker()
+        let workableArray = this.stringToArray()
         let verbs = this.approvedVerbs
 
+        // I need to flip the functionality of this to look through the string and stop when it finds the first verb it sees.
         for (var i = 0; i < verbs.length; i++) {
           if (workableArray.indexOf(verbs[i]) >= 0) {
-            console.log(verbs[i] + ' is in the array!')
+            console.log(verbs[i] + ' is the first VERB in the array!')
+            return
           } else {
             console.log(verbs[i] + ' is not in the array!')
           }
@@ -58,7 +63,7 @@ $(document).ready(function () {
 
     // debugger;
 
-    fromForm = 'walk This is My tEst strIng go get . How do you like that?'
+    fromForm = 'walk This get s My tEst strIng go. How get do you like that?'
     this.myParser = new Parser(fromForm)
   };
 
