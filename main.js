@@ -26,14 +26,11 @@ $(document).ready(function () {
         let verbs = this.approvedVerbs
 
         for (var i = 0; i < verbs.length; i++) {
-          // check the string array to see if it has any one of the approved verbs in it
-          // for the verb[0], check indexOf(the string array)
-        }
-
-        if (workableArray.indexOf('walk') >= 0) {
-          console.log('Walk is in the array!')
-        } else {
-          console.log('Walk is not in the array!')
+          if (workableArray.indexOf(verbs[i]) >= 0) {
+            console.log(verbs[i] + ' is in the array!')
+          } else {
+            console.log(verbs[i] + ' is not in the array!')
+          }
         }
       }
 
@@ -61,7 +58,7 @@ $(document).ready(function () {
 
     // debugger;
 
-    fromForm = 'walk This is My tEst strIng. How do you like that?'
+    fromForm = 'walk This is My tEst strIng go get . How do you like that?'
     this.myParser = new Parser(fromForm)
   };
 
