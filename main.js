@@ -8,17 +8,12 @@ $(document).ready(function () {
       // console.log("parser sanity check");
 
       this.userString = userString
-      this.approvedVerbs = [
-        'go',
-        'get'
-      ]
-      this.approvedNouns = [
-
-      ]
+      this.approvedVerbs = ['go', 'get']
+      this.approvedNouns = []
 
       this.stringToArray = () => {
         // this breaks the string into words for parsing
-        let lowerCaseString = this.userString.toLowerCase().replace(/[^\w\s]|_/g, '').replace(/\s+/g, ' ');
+        let lowerCaseString = this.userString.toLowerCase().replace(/[^\w\s]|_/g, '').replace(/\s+/g, ' ')
         let workableArray = lowerCaseString.split(' ')
         return workableArray
       }
@@ -28,13 +23,14 @@ $(document).ready(function () {
         let workableArray = this.stringToArray()
         let verbs = this.approvedVerbs
 
-        // I need to flip the functionality of this to look through the string and stop when it finds the first verb it sees.
-        for (var i = 0; i < verbs.length; i++) {
-          if (workableArray.indexOf(verbs[i]) >= 0) {
-            console.log(verbs[i] + ' is the first VERB in the array!')
-            return
-          } else {
-            console.log(verbs[i] + ' is not in the array!')
+        // I need to flip the functionality of this to look through the string and stop when it finds the first verb it sees. Start with the first word in the array and check to see if it equals any of the accepted verbs. If it matches, return that verb. If it doesn't match any of the verbs, move to the next word in the string array, and repeat the process. Continue until you find a match.
+        for (let i = 0; i < workableArray.length; i++) {
+          // debugger;
+          for (let it = 0; it < verbs.length; it++) {
+            if (workableArray[i] === verbs[it]) {
+              console.log(workableArray[i] + ' equals ' + verbs[it])
+              return verbs[it]
+            }
           }
         }
       }
@@ -63,11 +59,11 @@ $(document).ready(function () {
 
     // debugger;
 
-    fromForm = 'walk This get s My tEst strIng go. How get do you like that?'
+    fromForm = 'I want get to the to go north and get the spade'
     this.myParser = new Parser(fromForm)
   };
 
-  gameLogic = new Game();
+  gameLogic = new Game()
 })
 
 // debugger;
