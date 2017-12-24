@@ -9,7 +9,7 @@ $(document).ready(function () {
 
       this.userString = userString
       this.approvedVerbs = ['go', 'get']
-      this.approvedNouns = []
+      this.approvedNouns = ['fart', 'north']
 
       this.stringToArray = () => {
         // this breaks the string into words for parsing
@@ -18,29 +18,27 @@ $(document).ready(function () {
         return workableArray
       }
 
-      this.findVerb = () => {
+      this.findKeyword = (wordArrayType) => {
         // looks for the first approved verb in the string & returns that verb
         let workableArray = this.stringToArray()
-        let verbs = this.approvedVerbs
+        let words = wordArrayType
 
-        // I need to flip the functionality of this to look through the string and stop when it finds the first verb it sees. Start with the first word in the array and check to see if it equals any of the accepted verbs. If it matches, return that verb. If it doesn't match any of the verbs, move to the next word in the string array, and repeat the process. Continue until you find a match.
         for (let i = 0; i < workableArray.length; i++) {
-          // debugger;
-          for (let it = 0; it < verbs.length; it++) {
-            if (workableArray[i] === verbs[it]) {
-              console.log(workableArray[i] + ' equals ' + verbs[it])
-              return verbs[it]
+          for (let it = 0; it < words.length; it++) {
+            if (workableArray[i] === words[it]) {
+              return words[it]
             }
           }
         }
       }
 
-      this.findNouns = (array) => {
-        // looks for the approved nouns in the string & return them
-      }
-
-      this.processInput = (noun, verbArray) => {
+      this.processInput = () => {
         // this takes the above couple functions and actually parses the string, returning the thing that the computer needs to do
+        let noun = this.findKeyword(this.approvedNouns)
+        let verb = this.findKeyword(this.approvedVerbs)
+        console.log('The user input: "' + this.userString + '".')
+        console.log('The computer sees: "' + this.stringToArray().join(' ') + '".')
+        console.log('The verb is ' + verb + ' and the noun is ' + noun)
       }
     }
 
@@ -59,7 +57,7 @@ $(document).ready(function () {
 
     // debugger;
 
-    fromForm = 'I want get to the to go north and get the spade'
+    fromForm = 'this is a huge string go that test the Limits of WhAt C.an be ))   north      ((^&$%^#^) done with the fart)'
     this.myParser = new Parser(fromForm)
   };
 
