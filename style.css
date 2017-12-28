@@ -1,0 +1,25 @@
+#communicae {
+  background-color: red;
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+#user-form {
+  width: 100%;
+  background-color: blue;
+}
+
+#user-input {
+  width: 100%;
+}
+
+#the-map {
+  background-color: yellow;
+  width: 50%;
+}
+
+#inventory {
+  background-color: green;
+}

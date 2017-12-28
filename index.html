@@ -2,24 +2,29 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <title></title>
+    <title>A Colossal Text Adventure</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>A Colossal Text Adventure</h1>
 
     <div id='the-map'>
+      The Map
       <!-- An image with individual room images that can be visible or invisible -->
     </div>
 
     <div id='inventory'>
+      Inventory
       <!-- One physical slot for each item that can be picked up. A visible mirror of the inventory array. -->
     </div>
 
     <div id='communicae'>
-
-
-      <form onsubmit='return false'>
-        <input type='text' id='user-form' />
+      <div id='chat-log-box'>
+        <ul id='chat-log'>
+        </ul>
+      </div>
+      <form onsubmit='return false' id='user-form'>
+        <input type='text' id='user-input' />
         <button type='submit'>-></button>
       </form>
     </div>
