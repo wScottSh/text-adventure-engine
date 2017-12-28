@@ -23,3 +23,13 @@
 #inventory {
   background-color: green;
 }
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.player-says {
+  text-align: left;
+}
