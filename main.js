@@ -6,8 +6,8 @@ $(document).ready(function () {
       // console.log("parser sanity check");
 
       this.userString = userString
-      this.approvedVerbs = ['go', 'get', 'use']
-      this.approvedNouns = ['fart', 'north']
+      this.approvedVerbs = ['go', 'get', 'use', 'look']
+      this.approvedNouns = ['north', 'east', 'south', 'west']
 
       this.stringToArray = () => {
         // this breaks the string into words for parsing
@@ -24,7 +24,10 @@ $(document).ready(function () {
         for (let i = 0; i < workableArray.length; i++) {
           for (let it = 0; it < words.length; it++) {
             if (workableArray[i] === words[it]) {
+              console.log("Yay!!!! " + workableArray[i] + " DOES equal " + words[it]);
               return words[it]
+            } else {
+              console.log(workableArray[i] + " does not equal " + words[it]);
             }
           }
         }
@@ -42,35 +45,38 @@ $(document).ready(function () {
       }
     }
 
-    function Player () {
-      // contains all of the code for moving the player and interacting with the world.
-    }
-
     function Rooms () {
-      function RoomMaker (x, y, z, n, ne, e, se, s, sw, w, nw, u, d, descString) {
+      function RoomMaker (config) {
         // this is the template of all the rooms stored in a decorator functions
-        let xLocation = x
-        let yLocation = y
-        let zLocation = z
-        let description = descString
-        let exits = {
-          north: n,
-          northEast: ne,
-          east: e,
-          southEast: se,
-          south: s,
-          southWest: sw,
-          west: w,
-          northWest: nw,
-          up: u,
-          down: d
+        this.x = config.x
+        this.y = config.y
+        this.z = config.z
+        this.description = config.description
+        this.exits = {
+          north: config.north,
+          northEast: config.northEast,
+          east: config.east,
+          southEast: config.southEast,
+          south: config.south,
+          southWest: config.southWest,
+          west: config.west,
+          northWest: config.northWest,
+          up: config.up,
+          down: config.down
         }
-        // let interactions = {intractionArray} // add the things via the param array
       }
-      this.room1 = new RoomMaker(0, 0, 0, true, false, true, false, false, false, false, false, false, false, 'You are standing in a room. There is nothing around.')
+
+      this.room1 = new RoomMaker({
+        x: 0,
+        y: 0,
+        z: 0,
+        north: true,
+        east: true,
+        description: 'You are standing in an empty room.'
+      })
     }
 
-    fromForm = 'this is a huge \ string go that test the Limits of WhAt C.an be ))   north      ((^&$%^#^) done with the fart)'
+    fromForm = 'this is a huge \ string that test the Limits of WhAt C.an be ))   north      ((^&$%^#^) done with the fart get)'
     this.myRooms = new Rooms()
     this.myParser = new Parser(fromForm)
   };
