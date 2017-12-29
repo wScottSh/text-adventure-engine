@@ -1,5 +1,6 @@
 $(document).ready(function () {
   // console.log('jQuery ready');
+  // debugger
 
   function Parser () {
     // console.log('parser sanity check');
@@ -41,7 +42,7 @@ $(document).ready(function () {
       $('#chat-log').append('<li class="player-says">' + $('#user-input').val() + '</li>')
       $('#user-input').val('')
       console.log(output)
-      return output
+      player.performAction(output)
 
       // QUICK REFERENCE:
       // gameLogic.myParser.processInput()[0] => processed verb
@@ -50,11 +51,12 @@ $(document).ready(function () {
   }
 
   function Rooms () {
+
     function RoomMaker (config) {
       // this is the template of all the rooms stored in a decorator function
       this.coordinates = config.coordinates
       this.description = config.description
-      this.exits = { // whay does this notation work in combination with the this.var notation above?
+      this.exits = { // why does this notation work in combination with the 'this.var' notation above?
         north: config.north,
         northEast: config.northEast,
         east: config.east,
@@ -67,26 +69,32 @@ $(document).ready(function () {
         down: config.down
       }
       this.items = {}
-      // RoomMaker.allRooms.push(this)
     }
 
-    // RoomMaker.allRooms = []
+    this.roomLister = (maxRooms) => {
+      for (let i = 0; i <= maxRooms; i++) {
+        let roomName = 'room' + i
+        this.roomArray.push(rooms[roomName]['coordinates'])
+      }
+    }
+
+    this.roomArray = []
 
     // The rooms
-    this.room1 = new RoomMaker({
+    this.room0 = new RoomMaker({
       coordinates: [0, 0, 0],
-      north: [0, 1, 0], // when going north, move player to room with [x, y, z] coordinates
+      north: [0, 1, 0], // when going north, move player to room coords [x, y, z]
       east: [1, 0, 0],
       description: "This is the starting room. It's empty."
     })
 
-    this.room2 = new RoomMaker({
+    this.room1 = new RoomMaker({
       coordinates: [0, 1, 0],
       south: [0, 0, 0],
       description: "This is the northern room. It's empty."
     })
 
-    this.room3 = new RoomMaker({
+    this.room2 = new RoomMaker({
       coordinates: [1, 0, 0],
       west: [0, 0, 0],
       description: "This is the easterly room. It's empty."
@@ -96,25 +104,41 @@ $(document).ready(function () {
   function Player (location) {
     this.location = location
 
-    function PlayerMover () {
+    this.performAction = (words) => {
+      console.log('Performing input on the words ' + words.verb + ' and ' + words.noun)
+      if (words.verb === 'look') {
+        player.look()
+      }
+    }
+
+    this.look = () => {
+      // this prints the room description and any exits
+      console.log('LOOK!')
+      $('#chat-log').append('<li class="compy-says">' + rooms.room0.description + '</li>')
+    }
+
+    this.move = () => {
       // moves the player location to the coordinates listed in the direction typed
+      console.log('MOVE!')
     }
 
-    function PlayerUse () {
-      // this prints the description
+    this.use = () => {
+      // this is the interaction function. Either items in your inventory, or items in the world that are interactable but not pickupable.
+      console.log('USE!')
     }
 
-    this.move = new PlayerMover()
-    this.printStatus = new PlayerStatus()
+    this.get = () => {
+      // this is the function that adds items to your inventory
+      console.log('GET!')
+    }
   }
-
-  myRooms = new Rooms()
-  myParser = new Parser()
-  myPlayer = new Player([0, 0, 0])
+// debugger
+  rooms = new Rooms()
+  parser = new Parser()
+  player = new Player([0, 0, 0])
+  rooms.roomLister(2)
 
   $('#user-form').submit(function (event) {
-    myParser.processInput()
+    parser.processInput()
   })
 })
-
-// debugger;
