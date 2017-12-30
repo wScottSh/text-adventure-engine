@@ -92,6 +92,8 @@ $(document).ready(function () {
 
   function Player (coords) {
     this.myCoords = coords
+    this.myRoom
+    this.myExits
 
     this.findMyRoom = () => {
       for (let i = 0; i < rooms.roomArray.length; i++) {
@@ -99,12 +101,21 @@ $(document).ready(function () {
         if (rooms[roomName]['coordinates'].join() === player.myCoords.join()) {
           player.myRoom = rooms[roomName]
           player.findExits(player.myRoom)
+          return
         }
       }
     }
 
-    this.findExits = (myRoom) => {
+    this.findExits = (currentRoom) => {
       // use current room to determine which exits are available for me to move through
+      let exits = currentRoom.exits
+      const availableExits = []
+      for (let k in exits) {
+        if (typeof exits[k] !== 'undefined') {
+          availableExits.push(k)
+        }
+      }
+      player.myExits = availableExits
     }
 
     this.performAction = (words) => {
