@@ -8,7 +8,7 @@ $(document).ready(function () {
   function Parser () {
     // this.userString = userString
     this.verbSynonyms = ['go', 'get', 'use', 'look']
-    this.nounSynonyms = ['north', 'east', 'south', 'west']
+    this.nounSynonyms = ['north', 'east', 'south', 'west', 'up', 'down']
     this.approvedVerbs = ['go', 'get', 'use', 'look']
 
     this.stringToArray = () => {
@@ -72,21 +72,101 @@ $(document).ready(function () {
     // The rooms
     this.room0 = new RoomMaker({
       coordinates: [0, 0, 0],
-      north: [0, 1, 0], // when going north, move player to room coords [x, y, z]
+      description: 'You\'re in Room 0',
+      north: [0, 0, 0],
+      south: [0, 0, 0],
       east: [1, 0, 0],
-      description: 'This is the starting room. It\'s empty.'
+      west: [-1, 0, 0]
     })
 
     this.room1 = new RoomMaker({
-      coordinates: [0, 1, 0],
-      south: [0, 0, 0],
-      description: 'This is the northern room. It\'s empty.'
+      coordinates: [-1, 0, 0],
+      description: 'You\'re in Room 1',
+      east: [0, 0, 0],
+      south: [-1, -1, 0]
     })
 
     this.room2 = new RoomMaker({
+      coordinates: [-1, -1, 0],
+      description: 'You\'re in Room 2',
+      north: [-1, 0, 0]
+    })
+
+    this.room3 = new RoomMaker({
       coordinates: [1, 0, 0],
+      description: 'You\'re in Room 3',
+      north: [1, 1, 0],
       west: [0, 0, 0],
-      description: 'This is the easterly room. It\'s empty.'
+      south: [0, 0, 0],
+      down: [1, 0, -1]
+    })
+
+    this.room4 = new RoomMaker({
+      coordinates: [1, 0, -1],
+      description: 'You\'re in Room 4',
+      up: [1, 0, 0]
+    })
+
+    this.room5 = new RoomMaker({
+      coordinates: [1, 1, 0],
+      description: 'You\'re in Room 5',
+      north: [0, 0, 0],
+      east: [2, 1, 0],
+      south: [1, 0, 0]
+    })
+
+    this.room6 = new RoomMaker({
+      coordinates: [2, 1, 0],
+      description: 'You\'re in Room 6',
+      north: [2, 2, 0],
+      south: [0, 0, 0],
+      west: [1, 1, 0]
+    })
+
+    this.room7 = new RoomMaker({
+      coordinates: [2, 2, 0],
+      description: 'You\'re in Room 7',
+      north: [2, 3, 0],
+      east: [0, 0, 0],
+      south: [2, 1, 0],
+      west: [1, 2, 0]
+    })
+
+    this.room8 = new RoomMaker({
+      coordinates: [1, 2, 0],
+      description: 'You\'re in Room 8',
+      east: [2, 2, 0],
+      down: [1, 2, -1]
+    })
+
+    this.room9 = new RoomMaker({
+      coordinates: [2, 3, 0],
+      description: 'You\'re in Room 9',
+      north: [0, 0, 0],
+      east: [0, 0, 0],
+      south: [2, 2, 0],
+      west: [1, 3, 0]
+    })
+
+    this.room10 = new RoomMaker({
+      coordinates: [1, 3, 0],
+      description: 'You\'re in Room 10',
+      north: [1, 4, 0],
+      east: [2, 3, 0],
+      south: [0, 0, 0],
+      west: [0, 0, 0]
+    })
+
+    this.room11 = new RoomMaker({
+      coordinates: [1, 4, 0],
+      description: 'You\'re in Room 11',
+      south: [1, 3, 0]
+    })
+
+    this.room12 = new RoomMaker({
+      coordinates: [1, 2, -1],
+      description: 'You\'re in Room 12',
+      up: [1, 2, 0]
     })
   }
 
@@ -137,10 +217,8 @@ $(document).ready(function () {
     }
 
     this.move = (words) => {
-      // moves the player location to the coordinates listed in the direction typed
       if (words.noun !== undefined) {
         if (player.myExits.indexOf(words.noun) > -1) {
-          // $compySays('In the future, you\'ll actually move ' + words.noun)
           player.myCoords = player.myRoom.exits[words.noun]
           player.findMyRoom()
           player.look()
@@ -163,11 +241,11 @@ $(document).ready(function () {
       console.log('GET!')
     }
   }
-// debugger
+
   rooms = new Rooms()
   parser = new Parser()
   player = new Player([0, 0, 0])
-  rooms.roomLister(2)
+  rooms.roomLister(12)
   player.findMyRoom()
 
   $('#user-form').submit(function (event) {
