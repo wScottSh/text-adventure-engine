@@ -3,39 +3,44 @@
   <head>
     <meta charset='utf-8'>
     <title>A Colossal Text Adventure</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   </head>
   <body>
-    <h1>A Colossal Text Adventure</h1>
-
-    <div id='the-map'>
-      The Map
-      <!-- An image with individual room images that can be visible or invisible -->
-    </div>
-
-    <div id='inventory'>
-      Inventory
-      <!-- One physical slot for each item that can be picked up. A visible mirror of the inventory array. -->
-    </div>
-
-    <div id='communicae'>
-      <div id='chat-log-box'>
-        <ul id='chat-log'>
-          <li class='compy-says'>You step into the fabled Lost Woods, apprehensive of what you'll find. The name suits the place well. No one you know has ever come out of the woods after having entered. In fact, you know of two people in particular that entered and never came out. Is that to be your fate as well?
-          <br>
-          Looking around it doesn't seem so bad. There are four exits including the way you came in from the south.
-          <br>
-          You can go north, east, south, west</li>
-        </ul>
+    <div class='container-fluid'>
+      <h1>A Colossal Text Adventure</h1>
+      <div class="row">
+        <div class="col-lg-7 col-md-6">
+          <div id='the-map'>
+            The Map
+            <!-- An image with individual room images that can be visible or invisible -->
+          </div>
+          <div id='inventory'>
+            Inventory
+            <!-- One physical slot for each item that can be picked up. A visible mirror of the inventory array. -->
+          </div>
+        </div>
+        <div id='communicae' class="col-lg-5 col-md-6">
+          <div id='chat-log-box'>
+            <ul id='chat-log' >
+              <li class='compy-says'>You step into the fabled Lost Woods, apprehensive of what you'll find. The name suits the place well. No one you know has ever come out of the woods after having entered. In fact, you know of two people in particular that entered and never came out. Is that to be your fate as well?<br>
+                Looking around it doesn't seem so bad. There are four exits including the way you came in from the south.<br>
+                You can go north, east, south, west</li>
+            </ul>
+          </div>
+          <form onsubmit='return false' id='user-form'>
+            <input type='text' id='user-input' class="col-lg-11 col-md-11 col-sm-11"/>
+            <button type='submit' id='user-button' class="col-lg-1 col-md-1 col-sm-1">-></button>
+          </form>
+        </div>
       </div>
-      <form onsubmit='return false' id='user-form'>
-        <input type='text' id='user-input' />
-        <button type='submit'>-></button>
-      </form>
     </div>
 
     <!-- JS files -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <!-- Latest compiled Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src='main.js' charset='utf-8'></script>
   </body>
 </html>
