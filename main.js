@@ -101,13 +101,12 @@ $(document).ready(function () {
         if (rooms[roomName]['coordinates'].join() === player.myCoords.join()) {
           player.myRoom = rooms[roomName]
           player.findExits(player.myRoom)
-          return
+          return player.myRoom
         }
       }
     }
 
     this.findExits = (currentRoom) => {
-      // use current room to determine which exits are available for me to move through
       let exits = currentRoom.exits
       const availableExits = []
       for (let k in exits) {
@@ -131,20 +130,26 @@ $(document).ready(function () {
       }
     }
 
-    this.look = (words) => {
-      let room = rooms.room0 // replace this hard coded variable with player's current room
+    this.look = () => {
+      let room = player.myRoom
       $compySays(room.description)
-      // and the exits are?
+      $compySays('Exits are ' + player.myExits.join(', '))
     }
 
     this.move = (words) => {
       // moves the player location to the coordinates listed in the direction typed
       if (words.noun !== undefined) {
-        $compySays('In the future, you\'ll actually move ' + words.noun)
-        // write the code to actually move in that direction :)
-        // also check if the direction to move is a valid direction to move
+        if (player.myExits.indexOf(words.noun) > -1) {
+          // $compySays('In the future, you\'ll actually move ' + words.noun)
+          player.myCoords = player.myRoom.exits[words.noun]
+          player.findMyRoom()
+          player.look()
+        } else {
+          $compySays('You can\'t go ' + words.noun)
+        }
       } else {
-        $compySays('Which direction do you want to go? Available directions are (blah blah blah)')
+        $compySays('Which direction do you want to go?')
+        $compySays('Exits are ' + player.myExits.join(', '))
       }
     }
 
