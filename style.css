@@ -1,27 +1,5 @@
-#communicae {
-  background-color: red;
-  position: fixed;
-  bottom: 0;
-  width: 50%;
-  margin-bottom: 10px;
-}
-
-#user-form {
-  width: 100%;
-  background-color: blue;
-}
-
-#user-input {
-  width: 100%;
-}
-
-#the-map {
-  background-color: yellow;
-  width: 50%;
-}
-
-#inventory {
-  background-color: green;
+html, body {
+  height: 100%;
 }
 
 li {
@@ -30,10 +8,83 @@ li {
   margin: 0;
 }
 
+p {
+  margin: 10px;
+}
+
+#communicae {
+  /* background-color: red; */
+  height: 100%;
+}
+
+#chat-log-box {
+  overflow-y: scroll;
+}
+
+#user-form {
+  width: 100%;
+  /* background-color: blue; */
+}
+
+#user-input {
+  width: 100%;
+}
+
+#the-map {
+  background-color: yellow;
+  height: 100%;
+}
+
+#inventory {
+  background-color: green;
+  height: 100px;
+}
+
+.row {
+  display: table;
+}
+
+.column, .input {
+  float: left;
+}
+
+.column.right {
+  width: 40%;
+}
+
+.column.left {
+  width: 60%;
+}
+
+.input.left {
+  width: 50%;
+}
+
+.input.right {
+  width: 10%;
+}
+
+.row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.chat-bubble {
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 1px 3px;
+}
+
 .player-says {
-  text-align: left;
+  background-color: #ADD8E6;
+  float: left;
+  border-bottom-left-radius: 0;
 }
 
 .compy-says {
-  text-align: right;
+  background-color: #ddd;
+  float: right;
+  border-bottom-right-radius: 0;
 }

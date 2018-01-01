@@ -2,7 +2,7 @@ $(document).ready(function () {
   // console.log('jQuery ready');
   // debugger
   const $compySays = (say) => {
-    $('#chat-log').append('<li class=\'compy-says\'>' + say + '</li>')
+    $('#chat-log-box').append('<div class=\'compy-says chat-bubble\'><p>' + say + '</p></div>')
   }
 
   function Parser () {
@@ -35,7 +35,7 @@ $(document).ready(function () {
       let theVerb = this.findKeyword(this.verbSynonyms)
       let theNoun = this.findKeyword(this.nounSynonyms)
       let output = {verb: theVerb, noun: theNoun}
-      $('#chat-log').append('<li class=\'player-says\'>' + $('#user-input').val() + '</li>')
+      $('#chat-log-box').append('<div class=\'player-says chat-bubble\'><p>' + $('#user-input').val() + '</p></div>')
       $('#user-input').val('') // clears the input field
       player.performAction(output)
     }
