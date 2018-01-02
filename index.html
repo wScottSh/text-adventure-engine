@@ -7,19 +7,9 @@
   </head>
   <body>
     <h1>A Colossal Text Adventure</h1>
-    <div class='row'>
-      <div class='column left'>
-        <div id='the-map'>
-          The Map
-          <!-- An image with individual room images that can be visible or invisible -->
-        </div>
-        <div id='inventory'>
-          Inventory
-          <!-- One physical slot for each item that can be picked up. A visible mirror of the inventory array. -->
-        </div>
-      </div>
-      <div id='communicae' class='column right'>
-        <div id='chat-log-box' class='row'>
+    <div id='container'>
+      <div id='communicae' class='big-border'>
+        <div id='chat-log-box'>
           <div class='compy-says chat-bubble'>
             <p>You step into the fabled Lost Woods, apprehensive of what you'll find. The name suits the place well. No one you know has ever come out of the woods after having entered. In fact, you know of two people in particular that entered and never came out. Is that to be your fate as well? Looking around it doesn't seem so bad. There are four exits including the way you came in from the south.</p>
           </div>
@@ -27,10 +17,19 @@
             <p>You can go north, east, south, west</p>
           </div>
         </div>
-        <form onsubmit='return false' id='user-form' class='row'>
-          <input type='text' id='user-input' class='input left'/>
+        <form onsubmit='return false' id='user-form'>
+          <input type='text' id='user-input' />
           <button type='submit' class='input right'>-></button>
         </form>
+      </div>
+      <div id='backpack' class="big-border">
+        <div id='the-map'>
+          <img src="images/lostwoods2.jpg" alt="Lost Woods" class="fill">
+        </div>
+        <div id='inventory'>
+          Inventory
+          <!-- One physical slot for each item that can be picked up. A visible mirror of the inventory array. -->
+        </div>
       </div>
     </div>
 

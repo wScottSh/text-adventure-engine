@@ -205,14 +205,18 @@ $(document).ready(function () {
 
     this.performAction = (words) => {
       console.log('Performing action on the words ' + words.verb + ' and ' + words.noun)
-      if (words.verb === 'look') {
-        player.look(words)
-      } else if (words.verb === 'go') {
-        player.move(words)
-      } else if (words.verb === 'get') {
-        player.get(words)
-      } else if (words.verb === 'use') {
-        player.use(words)
+      if (words.verb !== undefined) {
+        if (words.verb === 'look') {
+          player.look(words)
+        } else if (words.verb === 'go') {
+          player.move(words)
+        } else if (words.verb === 'get') {
+          player.get(words)
+        } else if (words.verb === 'use') {
+          player.use(words)
+        }
+      } else {
+        $compySays('Cannot get ye flask')
       }
     }
 
