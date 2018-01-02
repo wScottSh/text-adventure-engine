@@ -1,8 +1,16 @@
 html, body {
-  /* height: 100%; */
-  margin: 0;
-  /* position: fixed; */
   background-color: #333;
+  position: relative;
+  margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    /* background-color: #abcdef; */
 }
 
 li {
@@ -19,39 +27,61 @@ img {
    object-fit: cover;
    width: 100%;
    height: 100%;
+   border-radius: 30px;
+   margin-bottom: -100px;
+   /* overflow: hidden; */
 }
 
 .big-border {
-  border: 3px solid #ddd;
+  border: 2px solid #aaa;
   border-radius: 10px;
+  /* padding: 0 10px; */
 }
 
 #container {
+  position: fixed;
+  top: 80px;
   width: 100%;
-  float: left;
-  margin-right: -430px;
+  bottom: 0vh;
+  display: flex;
+  flex-direction: row;
+  /* height: 100%; */
+  /* align-items: stretch; */
+  /* margin-right: -440px; */
 }
 
-#backpack {
-  margin-right: 430px;
+#left-column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* justify-content: space-between; */
 }
 
 #the-map {
+  height: 100%;
 }
 
 #inventory {
-  background-color: green;
+  background-color: #ddd;
   height: 100px;
-  bottom: 0;
+  bottom: 0vh;
+  margin-top: 5px;
 }
 
-#communicae {
-  width: 430px;
-  float: right;
+#right-column {
+  /* flex: 0 1 430px; */
+  /* float: right; */
+  max-width: 520px;
+  min-width: 520px;
+  flex-direction: column-reverse;
+  display: flex;
+  margin-left: 5px;
 }
 
 #chat-log-box {
-  /* overflow-y: scroll; */
+  order: 2;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
 }
 
 .chat-bubble {
@@ -74,11 +104,20 @@ img {
 }
 
 #user-form {
-  width: 100%;
+  order: 1;
+  display: flex;
   height: 50px;
-  border-top-color: 0;
+  flex-direction: row;
 }
 
 #user-input {
-  width: 40%;
+  width: 100%;
+  height: 50px;
+}
+
+#the-button {
+  display: none;
+  /* width: 40%; */
+  /* overflow: hidden; */
+  /* clear: both; */
 }

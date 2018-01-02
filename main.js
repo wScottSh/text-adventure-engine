@@ -45,6 +45,7 @@ $(document).ready(function () {
     function RoomMaker (config) {
       this.coordinates = config.coordinates
       this.description = config.description
+      this.image = config.image
       this.exits = {
         north: config.north,
         northEast: config.northEast,
@@ -76,14 +77,16 @@ $(document).ready(function () {
       north: [0, 0, 0],
       south: [0, 0, 0],
       east: [1, 0, 0],
-      west: [-1, 0, 0]
+      west: [-1, 0, 0],
+      image: 'lostwoods1.png'
     })
 
     this.room1 = new RoomMaker({
       coordinates: [-1, 0, 0],
       description: 'You step out of the trunk into a much larger glade and spot an imp on a weathered trunk that stands nearly 10 feet high. The imp plays a flute, but otherwise ignores you. At the base of the imp\'s platform is a stump that almost feels like a spot to place an offering.',
       east: [0, 0, 0],
-      south: [-1, -1, 0]
+      south: [-1, -1, 0],
+      image: 'lostwoods2.jpg'
     })
 
     this.room2 = new RoomMaker({
@@ -222,6 +225,7 @@ $(document).ready(function () {
 
     this.look = () => {
       let room = player.myRoom
+      $('img')[0].outerHTML = '<img src="images/' + room.image + '" alt="Lost Woods">'
       $compySays(room.description)
       $compySays('You can go ' + player.myExits.join(', '))
     }
