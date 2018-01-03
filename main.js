@@ -239,7 +239,11 @@ $(document).ready(function () {
       let room = player.myRoom
       $('img')[0].outerHTML = '<img src="images/' + room.image + '" alt="Lost Woods">'
       $compySays(room.description)
-      $compySays('You can go ' + player.myExits.join(', '))
+      if (room.image === 'room11.png') {
+        $compySays('YOU WIN!')
+      } else {
+        $compySays('You can go ' + player.myExits.join(', '))
+      }
     }
 
     this.move = (words) => {
