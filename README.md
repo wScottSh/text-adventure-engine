@@ -1,5 +1,7 @@
 # A Colossal Twitter Adventure
 
+[Click here to play this game online!](https://wscottsh.github.io/twitter-text-adventure/)
+
 ## Description
 
 __A Colossal Twitter Adventure__ is a game engine for building text adventure games that are played on the Twitter platform. The player tweets their instructions to a twitter bot, and the twitter bot responds with the proper description of the room the player is currently located.
