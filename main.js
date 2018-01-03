@@ -3,6 +3,7 @@ $(document).ready(function () {
   // debugger
   const $compySays = (say) => {
     $('#chat-log-box').append('<div class=\'compy-says chat-bubble\'><p>' + say + '</p></div>')
+    $("#chat-log-box").scrollTop($("#chat-log-box")[0].scrollHeight)
   }
 
   function Parser () {

@@ -1,16 +1,20 @@
 html, body {
-  background-color: #333;
+  background-color: #000;
+  background-image: url('images/background.png');
+  background-size: cover;
   position: relative;
   margin: 0;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    /* background-color: #abcdef; */
+  font-family: 'Merienda', cursive;
+  color: #bedbf3;
+  padding-left: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
 }
 
 li {
@@ -21,21 +25,24 @@ li {
 
 p {
   margin: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3em;
+  color: #bedbf3;
 }
 
 img {
    object-fit: cover;
    width: 100%;
    height: 100%;
-   border-radius: 30px;
+   border-radius: 10px;
    margin-bottom: -100px;
    /* overflow: hidden; */
 }
 
 .big-border {
-  border: 2px solid #aaa;
+  border: 2px solid #9ecaed;
   border-radius: 10px;
-  /* padding: 0 10px; */
+  box-shadow: 0 0 10px 1px #9ecaed;
 }
 
 #container {
@@ -45,16 +52,12 @@ img {
   bottom: 0vh;
   display: flex;
   flex-direction: row;
-  /* height: 100%; */
-  /* align-items: stretch; */
-  /* margin-right: -440px; */
 }
 
 #left-column {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  /* justify-content: space-between; */
 }
 
 #the-map {
@@ -62,15 +65,13 @@ img {
 }
 
 #inventory {
-  background-color: #ddd;
+  background-color: rgba(0,0,0,.5);
   height: 100px;
   bottom: 0vh;
   margin-top: 5px;
 }
 
 #right-column {
-  /* flex: 0 1 430px; */
-  /* float: right; */
   max-width: 520px;
   min-width: 520px;
   flex-direction: column-reverse;
@@ -80,44 +81,59 @@ img {
 
 #chat-log-box {
   order: 2;
+  bottom: 500vh;
   flex-direction: column-reverse;
   overflow-y: scroll;
 }
 
 .chat-bubble {
   width: 90%;
-  border: 1px solid black;
+  border: 1px solid #9ecaed;
   border-radius: 15px;
-  margin: 1px 3px;
+  margin: 3px;
+  box-shadow: 0 0 10px #9ecaed;
 }
 
 .player-says {
-  background-color: #ADD8E6;
+  background-color: rgba(40,40,90,.5);
   float: left;
-  border-bottom-left-radius: 0;
 }
 
 .compy-says {
-  background-color: #ddd;
+  background-color: rgba(0,0,0,.5);
   float: right;
-  border-bottom-right-radius: 0;
 }
 
 #user-form {
   order: 1;
-  display: flex;
-  height: 50px;
-  flex-direction: row;
+  /* width: 520px; */
 }
 
-#user-input {
-  width: 100%;
+input {
+  width: 509px;
+  border: none;
+  border-top: 1px solid #9ecaed;
+  padding-left: 10px;
+  color: white;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
   height: 50px;
+  bottom: 0vh;
+  margin-top: 5px;
+  border-radius: 0 0 10px 10px;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, .2);
+  font-weight: bold;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+    background-color: rgba(158, 202, 237, .5);
 }
 
 #the-button {
   display: none;
-  /* width: 40%; */
-  /* overflow: hidden; */
-  /* clear: both; */
 }

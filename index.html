@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <title>A Colossal Text Adventure</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Merienda" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -11,16 +12,16 @@
     </header>
     <div id='container'>
       <div id='left-column'>
-        <div id='the-map'>
+        <div id='the-map' class="big-border">
           <img src="images/lostwoods1.png" alt="Lost Woods">
         </div>
         <div id='inventory' class="big-border">
-          Inventory
+          <!-- Inventory -->
           <!-- One physical slot for each item that can be picked up. A visible mirror of the inventory array. -->
         </div>
       </div>
       <div id='right-column' class="big-border">
-        <div id='chat-log-box'>
+        <div id='chat-log-box' >
           <div class='compy-says chat-bubble'>
             <p>You step into the fabled Lost Woods, apprehensive of what you'll find. The name suits the place well. No one you know has ever come out of the woods after having entered. In fact, you know of two people in particular that entered and never came out. Is that to be your fate as well? Looking around it doesn't seem so bad. There are four exits including the way you came in from the south.</p>
           </div>
@@ -29,7 +30,7 @@
           </div>
         </div>
         <form onsubmit='return false' id='user-form'>
-          <input type='text' placeholder="Where do you want to go?" id='user-input' />
+          <input type='text' placeholder="Type 'GO' followed by a direction" id='user-input'/>
           <button type='submit' id='the-button'>-></button>
         </form>
       </div>
