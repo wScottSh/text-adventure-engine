@@ -79,7 +79,7 @@ $(document).ready(function () {
       south: [0, 0, 0],
       east: [1, 0, 0],
       west: [-1, 0, 0],
-      image: 'lostwoods1.png'
+      image: 'room0.png'
     })
 
     this.room1 = new RoomMaker({
@@ -87,14 +87,15 @@ $(document).ready(function () {
       description: 'You step out of the trunk into a much larger glade and spot an imp on a weathered trunk that stands nearly 10 feet high. The imp plays a flute, but otherwise ignores you. At the base of the imp\'s platform is a stump that almost feels like a spot to place an offering.',
       east: [0, 0, 0],
       south: [-1, -1, 0],
-      image: 'lostwoods2.jpg'
+      image: 'room1.png'
     })
 
     this.room2 = new RoomMaker({
       coordinates: [-1, -1, 0],
       description: 'The sun filters through the misty air causing long streaks of light to spill across the bridge ahead of you. You recognize the bridge as the one that takes you outside of the Kokiri Meadow, but it surprises you how small it feels seen from this angle strung so high above your head. Further south there\'s what look\'s like a weathered old log sticking up from the soft earth.',
       north: [-1, 0, 0],
-      south: [-1, -2, 0]
+      south: [-1, -2, 0],
+      image: 'room2.png'
     })
 
     this.room3 = new RoomMaker({
@@ -103,20 +104,23 @@ $(document).ready(function () {
       north: [1, 1, 0],
       west: [0, 0, 0],
       south: [0, 0, 0],
-      down: [1, 0, -1]
+      down: [1, 0, -1],
+      image: 'room3.png'
     })
 
     this.room4 = new RoomMaker({
       coordinates: [1, 0, -1],
       description: 'Climbing down into the wildflowers, you see that the beam of light rests directly onto a tree stump. As you approach, the wildflowers right next to the stump rustle as something scurries away.',
-      up: [1, 0, 0]
+      up: [1, 0, 0],
+      image: 'room4.png'
     })
 
     this.room5 = new RoomMaker({
       coordinates: [1, 1, 0],
       description: 'To your east and south are those hollowed out trunks that seem to be leading you deeper into the woods. Directly north is a large ivy-covered, but otherwise out of place, stone archway that leads into a black man-made cavern. Sadly, there are several large stones that make this route inaccessible. There seems to be a faint drum beat coming from behind the rocks.',
       east: [2, 1, 0],
-      south: [1, 0, 0]
+      south: [1, 0, 0],
+      image: 'room5.png'
     })
 
     this.room6 = new RoomMaker({
@@ -124,7 +128,8 @@ $(document).ready(function () {
       description: 'On the eastern side of this round glade is a serene man-made pond which ripples in the breeze. Whatever the source of the water is, it\'s obvious that it\'s not from the muddy earth. The water is so clear you can see straight to the bottom of the pool. It\'s hard to tell, but your guess is that it\'s maybe 20-or-so feet deep. Hollowed out trunks are on the north, west, and south.',
       north: [2, 2, 0],
       south: [0, 0, 0],
-      west: [1, 1, 0]
+      west: [1, 1, 0],
+      image: 'room6.png'
     })
 
     this.room7 = new RoomMaker({
@@ -133,14 +138,16 @@ $(document).ready(function () {
       north: [2, 3, 0],
       east: [0, 0, 0],
       south: [2, 1, 0],
-      west: [1, 2, 0]
+      west: [1, 2, 0],
+      image: 'room7.png'
     })
 
     this.room8 = new RoomMaker({
       coordinates: [1, 2, 0],
       description: 'A majestic tree towers over you, streams of light shooting through it\'s full canopy of leaves. A group of butterflies flutter around what looks as if it\'s a tight tunnel beneath the tree\'s roots.',
       east: [2, 2, 0],
-      down: [1, 2, -1]
+      down: [1, 2, -1],
+      image: 'room8.png'
     })
 
     this.room9 = new RoomMaker({
@@ -149,7 +156,8 @@ $(document).ready(function () {
       north: [0, 0, 0],
       east: [0, 0, 0],
       south: [2, 2, 0],
-      west: [1, 3, 0]
+      west: [1, 3, 0],
+      image: 'room9.png'
     })
 
     this.room10 = new RoomMaker({
@@ -158,25 +166,28 @@ $(document).ready(function () {
       north: [1, 4, 0],
       east: [2, 3, 0],
       south: [0, 0, 0],
-      west: [0, 0, 0]
+      west: [0, 0, 0],
+      image: 'room10.png'
     })
 
     this.room11 = new RoomMaker({
       coordinates: [1, 4, 0],
       description: 'Can it be?! You\'ve found the Forest Temple, lost for centuries deep within the labrynthine Lost Woods.',
-      south: [1, 3, 0]
+      image: 'room11.png'
     })
 
     this.room12 = new RoomMaker({
       coordinates: [1, 2, -1],
       description: 'Climbing down into the dank grotto beneath the tree proves to not be nearly as fruitful as you\'d hoped. Nothing but moist soil and fresh spiderwebs. A few stray beams of light illuminate the underground system beneath the roots to be large, but otherwise uninteresting.',
-      up: [1, 2, 0]
+      up: [1, 2, 0],
+      image: 'room12.png'
     })
 
     this.room13 = new RoomMaker({
       coordinates: [-1, -2, 0],
       description: 'The weathered log is much larger this close to it. In fact, it goes even higher than the bridge. There doesn\'t seem to be much else over here though.',
-      north: [-1, -1, 0]
+      north: [-1, -1, 0],
+      image: 'room13.png'
     })
   }
 
