@@ -179,7 +179,7 @@ $(document).ready(function () {
 
     this.room12 = new RoomMaker({
       coordinates: [1, 2, -1],
-      description: 'Climbing down into the dank grotto beneath the tree proves to be a proverbial dud. It\'s not nearly as fruitful as you\'d hoped, containing nothing but moist soil and fresh spiderwebs. A few stray beams of light prove that the underground system is large, but otherwise uninteresting.',
+      description: 'Climbing down into the dank grotto beneath the tree proves to be a proverbial dud. It\'s not nearly as fruitful as you\'d hoped, containing nothing but moist soil and fresh spiderwebs. A few stray beams of light prove that the underground system to be large, but otherwise uninteresting.',
       up: [1, 2, 0],
       image: 'room12.png'
     })
